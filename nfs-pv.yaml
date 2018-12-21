@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: database
+  labels:
+    volume: database
+spec:
+  accessModes:
+  - ReadWriteOnce
+  - ReadOnlyMany
+  storageClassName: nfs
+  # Recycle
+  # Delete 
+  persistentVolumeReclaimPolicy: Recycle
+  capacity:
+    storage: 1Gi
+  nfs:
+    server: 68.183.55.188
+    path: /share1
+
